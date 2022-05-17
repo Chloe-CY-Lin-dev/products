@@ -10,7 +10,7 @@ while True:
 	# p.append(name)
 	# p.append(price)
 	# 前3行可以用 p = [name, price]來代替
-	# products.append(p) #把小清單p裝進大清單products
+	# products.append(p) ## 把小清單p裝進大清單products
 	products.append([name, price])
 print(products)
 # [['奶茶', '10'], ['珍珠奶茶', '60'], ['四季春', '40']] 這是二維清單
