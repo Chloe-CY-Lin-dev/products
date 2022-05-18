@@ -17,3 +17,7 @@ print(products)
 
 for p in products:
 	print(p[0],'的價格是',p[1])
+
+with open('products.csv','w') as f: #write(w)寫入模式
+	for p in products:
+		f.write(p[0]+','+p[1]+'\n') #f.write才是真正的寫入
