@@ -1,13 +1,21 @@
+import os #operating system
+
 products=[]
 
-# 讀取檔案
-with open('products.csv', 'r', encoding='utf-8') as f:
-	for line in f:
-		if '商品,價格' in line:
-			continue #繼續, 如果讀到商品、價格,跳過此次並進到下一個迴圈
-		name, price = line.strip().split(',') #strip把換行符號去掉；spilt切割,split切割完的結果是清單
-		products.append([name, price])
-print(products)
+if os.path.isfile('products.csv'):
+	print('Yes! 找到檔案了')
+	# 讀取檔案
+	with open('products.csv', 'r', encoding='utf-8') as f:
+		for line in f:
+			if '商品,價格' in line:
+				continue #繼續, 如果讀到商品、價格,跳過此次並進到下一個迴圈
+			name, price = line.strip().split(',') #strip把換行符號去掉；spilt切割,split切割完的結果是清單
+			products.append([name, price])
+	print(products)
+
+else:
+	print('找不到檔案.....')
+
 
 # 讓使用者輸入商品,價格
 while True: #while loop適合用在不知道迴圈次數的情況下使用
